@@ -8,10 +8,13 @@
 
     <http
             auto-config="true"
-            create-session="stateless">
+            create-session="stateless"
+            entry-point-ref="restAuthenticationEntryPoint">
         <intercept-url pattern="/**" access="ROLE_USER" />
         <!--<http-basic/>-->
     </http>
+
+    <beans:bean id="restAuthenticationEntryPoint" class="me.vlad.security.RestAuthenticationEntryPoint"/>
 
     <authentication-manager>
         <authentication-provider>
