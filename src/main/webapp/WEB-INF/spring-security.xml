@@ -11,7 +11,7 @@
             create-session="stateless"
             entry-point-ref="restAuthenticationEntryPoint">
         <intercept-url pattern="/**" access="ROLE_USER" />
-        <!--<http-basic/>-->
+        <http-basic/>
     </http>
 
     <beans:bean id="restAuthenticationEntryPoint" class="me.vlad.security.RestAuthenticationEntryPoint"/>
